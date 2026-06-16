@@ -1,0 +1,9 @@
+Python
+Machine Learning
+SQL
+Git
+Docker
+AWS
+
+html 
+css 
