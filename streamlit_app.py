@@ -11,7 +11,6 @@ model = SentenceTransformer("all-MiniLM-L6-v2")
 st.title("AI Resume Screening System")
 
 st.markdown("""
-### About This Project
 
 This AI Resume Screening System ranks candidates based on:
 
@@ -153,8 +152,7 @@ if len(results) > 0:
     st.success(
         f"{top_candidate[0]} | Score: {round(top_candidate[4],2)}%"
     )
-
-
+    
 table_data = []
 
 for resume, score, email,phone,ai_score, final_score, matched_skills, missing_skills in results:
