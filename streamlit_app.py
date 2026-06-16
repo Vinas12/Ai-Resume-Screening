@@ -154,6 +154,23 @@ if len(results) > 0:
         f"{top_candidate[0]} | Score: {round(top_candidate[4],2)}%"
     )
 
+
+table_data = []
+
+for resume, score, email,phone,ai_score, final_score, matched_skills, missing_skills in results:
+
+    table_data.append({
+        "resume" : resume,
+        "email": email,
+        "Phone": phone,
+        "final_score %" : f"{round(final_score,2)}"
+    })
+
+df = pd.DataFrame(table_data)
+
+st.write("📊 Candidate Summary")
+st.dataframe(df)
+
 #RANKING 
 st.write("## 🏆 Candidate Ranking")
 
@@ -170,7 +187,7 @@ for resume, score, email,phone,ai_score, final_score, matched_skills, missing_sk
     if final_score >= 80:
         st.success("Excellent Candidate ⭐")
     elif final_score >= 60:
-        st.warning("Good Candidate 👍")
+        st.warning("Good Candidate")
     else:
         st.error("Needs Improvement")
 
@@ -189,19 +206,3 @@ for resume, score, email,phone,ai_score, final_score, matched_skills, missing_sk
         st.error(skill)
 
     st.divider()
-
-table_data = []
-
-for resume, score, email,phone,ai_score, final_score, matched_skills, missing_skills in results:
-
-    table_data.append({
-        "resume" : resume,
-        "email": email,
-        "Phone": phone,
-        "final_score %" : f"{round(final_score,2)}"
-    })
-
-df = pd.DataFrame(table_data)
-
-st.write("## 📊 Candidate Summary")
-st.dataframe(df)
