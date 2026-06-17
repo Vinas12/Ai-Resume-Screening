@@ -33,3 +33,6 @@ An ATS-inspired Resume Screening System built using Python, Streamlit, and Sente
 ## Author
 
 *Vinas Mangroliya*
+
+#live demo 
+https://ai-resume-screening-qmmhfl662uksrgff4epvmp.streamlit.app/
